@@ -1,0 +1,78 @@
+<core:FragmentDefinition
+	xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+>
+	<Dialog
+		title="Product Details">
+       <Label text="ID" />
+       <Input value="" id="InputID" editable="false" width="20%" />
+       <Label text="Categories Name" />
+       <Input id="category"  width="65%" />
+
+       <Button text="ADD" press="OnAddSave"  id="btn1" ></Button>
+        <Table items="{path : 'localModel>/'}" >
+            <columns>
+                <Column >
+                    <Text text="ID" />
+                </Column>
+                <Column >
+                    <Text text="Name" />
+                </Column>
+                <Column >
+                    <Text text="Description" />
+                </Column>
+                <Column >
+                    <Text text="ReleaseDate" />
+                </Column>
+                <Column >
+                    <Text text="DiscontinuedDate" />
+                </Column>
+                <Column >
+                    <Text text="Price" />
+                </Column>
+                <Column >
+                    <Text text="Rating" />
+                </Column>
+                <Column >
+                    <Text text="SID" />
+                </Column>
+                <Column >
+                    <Text text="SName" />
+                </Column>
+                <Column >
+                    <Text text="Address" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Input id="inputID" value="{localModel>ID}" editable="false" ></Input>
+                        <Input id="inputName" value="{localModel>Name}"></Input>
+                        <Input id="inputDesc" value="{localModel>Description}"></Input>
+                        <DatePicker value="{localModel>ReleaseDate}" />
+                        <DatePicker value="{localModel>DiscontinuedDate}" />
+                        <!-- <Input  value="{localModel>ReleaseDate}"></Input> -->
+                        <!-- <Input  value="{localModel>DiscontinuedDate}"></Input> -->
+                        <Input id="inputPrice" value="{localModel>Price}" type="Number" ></Input>
+                        <Input  value="{localModel>Rating}" type="Number" ></Input>
+                        <Input  value="{localModel>Supplier/ID}" editable="false" ></Input>
+                        <Input  value="{localModel>Supplier/Name}"></Input>
+                        <!-- <Input  value="{localModel>Supplier/Address/Street} {localModel>Supplier/Address/City} {localModel>Supplier/Address/State} {localModel>Supplier/Address/ZipCode} {localModel>Supplier/Address/Country} "></Input> -->
+                        <VBox >
+                        <Input value="{localModel>Supplier/Address/Street}" placeholder="Street" />
+                        <Input value="{localModel>Supplier/Address/City}" placeholder="City" />
+                        <Input value="{localModel>Supplier/Address/State}" placeholder="State" />
+                        <Input value="{localModel>Supplier/Address/ZipCode}" placeholder="ZipCode" type="Number" />
+                        <Input value="{localModel>Supplier/Address/Country}" placeholder="Country" />
+                        </VBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+
+        <Button text="Close" press="fourPressclose"  />
+        <Button text="Save" press="FourPressSave" id="btnsave"  />
+	</Dialog>
+</core:FragmentDefinition>

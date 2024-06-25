@@ -1,0 +1,44 @@
+<mvc:View controllerName="sap.kt.odata.odata.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+          <!-- <List items="{/Products}" id="myTable" headerText="Products">
+			<CustomListItem title="{Name}" type="Active" id="objectId" press="onListItemPress"
+			number="{ parts:[{path:'Price'},{path:'Description'},{path:'Name'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {showMeasure: false} }" numberUnit="{CurrencyCode}">
+			<firstStatus>
+				<ObjectStatus
+					text="{Status}"
+					state="{
+						path: 'Status',
+						formatter: 'sap.m.sample.ObjectListItem.Formatter.status'
+					}" />
+			</firstStatus>
+            
+		</CustomListItem>
+       
+	</List> -->
+
+	<List headerText="Custom Content"  items="{path: '/Products'}" id="myTable"  >
+		<CustomListItem id="objectId" >
+			<HBox>
+				<core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+					<Label text="{Id}"/>
+					<Link text="{Name}" target="{ProductPicUrl}"   />
+					<Label text="{Description}"/>
+					<Label text="{Price}"/>
+					<RatingIndicator id="RI_default" maxValue="5" class="sapUiSmallMarginBottom" value="{Rating}" tooltip="Rating Tooltip" />
+					<Link text="Supplier" press="handlePress" />
+				</VBox>
+				<VBox ><Button class="btn111" icon="sap-icon://delete" press="OnDeleteMethodView2" />
+			<Button class="btn111" icon="sap-icon://edit" press="OnUpdateMethodView2" /></VBox>
+			</HBox>
+		</CustomListItem>
+	</List>
+        </content>
+    </Page>
+</mvc:View>

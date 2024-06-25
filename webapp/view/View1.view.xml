@@ -1,0 +1,34 @@
+<mvc:View controllerName="sap.kt.odata.odata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+		<Label text="Products"></Label>
+		<Input id="ID" value="" type="Number" width="100%" />
+		<Button text="OK" press="onPressProduct"></Button>
+		
+		<Input id="ID2" value="" type="Number" width="100%" />
+		<Button text="OK" press="onPressProduct2"></Button>
+
+		<Button text="Create OData" press="OnPressCreate" />
+		
+		<Button text="Add Product" press="onPressAddProduct"/>
+           	<List headerText="Business Name" id="listID"   items="{path: '/Categories'}" >
+		<CustomListItem>
+			<HBox>
+				<core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+					<Link text="{Name}" target="{ProductPicUrl}" press="handlePress"/>
+					<Label id="myList" text="{ID}" />	
+				</VBox>
+			<VBox ><Button class="btn11" icon="sap-icon://delete" press="OnDeleteMethodView1" />
+			<Button class="btn11" icon="sap-icon://edit" press="onUpdateIconView1" /></VBox>
+			</HBox>
+			<Button text="Get Count" press="handleCountPress" id="btn" ></Button>
+		</CustomListItem>
+		
+	</List>
+        </content>
+    </Page>
+</mvc:View>

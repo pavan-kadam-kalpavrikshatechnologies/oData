@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+>
+	<Dialog
+		title="Product Details">
+       <Label text="Change the Name of Categories" />
+       <Input value="" id="categories" />
+        <Button text="Close" press="updatePressclose"  />
+        <Button text="Save" press="updatePressSave"  />
+	</Dialog>
+</core:FragmentDefinition>
